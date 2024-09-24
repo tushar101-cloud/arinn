@@ -1,0 +1,124 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    height: 100%;
+    width: 250px; /* Fixed width for sidebar */
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: -250px; /* Initially hidden */
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.sidebar form input,
+.sidebar form button {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.sidebar form button {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+.sidebar h2 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 36px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Navbar and Main Content */
+.navbar {
+    width: 100%;
+    background-color: #333;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    transition: 0.3s; /* For smooth transition when hiding/moving */
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+}
+
+#search-bar {
+    margin-left: 10px;
+    padding: 5px;
+}
+
+#start-navigation {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+/* AR Container */
+.ar-container {
+    margin-top: 70px; /* Adjust margin to fit below the fixed navbar */
+    text-align: center;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 600px) {
+    .sidebar {
+        width: 200px;
+        padding-top: 20px;
+    }
+
+    #main-content {
+        margin-left: 0;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+    }
+
+    #start-navigation {
+        margin-top: 10px;
+    }
+
+    /* Hide navbar when sidebar opens */
+    .navbar-hidden {
+        transform: translateX(-100%);
+    }
+}
